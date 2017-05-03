@@ -21,8 +21,16 @@ class LoginPage extends React.Component {
   processForm(event) {
     event.preventDefault();
 
-    console.log('email:', this.state.user.email);
-    console.log('password:', this.state.user.password);
+    const errors = {};
+    if (!this.state.user.email.length) errors.email = 'Please provide an email';
+    if (!this.state.user.password.length) errors.password = 'Please provide a password';
+    if (!Object.keys(errors).length) {
+      console.log('email:', this.state.user.email);
+      console.log('password:', this.state.user.password);
+    } 
+    this.setState({
+      errors
+    });
   }
 
   changeUser(event) {
