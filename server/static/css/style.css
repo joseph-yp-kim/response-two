@@ -1,18 +1,18 @@
 body {
   margin: 0;
   font-size: 16px;
-  font-family: sans-serif;
+  font-family: Futura;
 }
 
 a {
-  color: #00bcd4;
-  font-weight: bold;
+  color: #05486C;
+  font-weight: italic;
   text-decoration: none;
   transition: color 0.4s;
 }
 
 a:hover {
-  color: #1976d2;
+  color: #808080;
 }
 
 .text-center {
@@ -20,24 +20,32 @@ a:hover {
 }
 
 .top-bar {
-  padding: 10px 15px;
+  height: 48px;
+  width: 100%;
   margin-bottom: 50px;
   background-color: #EEEEEE;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.top-bar::after {
-  content: '';
-  display: block;
-  clear: both;
+#icon {
+  height: 30px;
+  widows: auto;
 }
 
 .top-bar-left {
-  float: left;
   font-size: 1.5em;
+  margin-left: 10px;
+}
+
+.top-bar-left a {
+  display: flex;
+  align-items: center;
 }
 
 .top-bar-right {
-  float: right;
+  margin-right: 10px;
 }
 
 .top-bar a,
@@ -51,6 +59,18 @@ a:hover {
   width: 700px;
 }
 
+.payment-container {
+  margin: 0 auto;
+  width: 70%;
+  height: auto;
+}
+
+.drop-down {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .card-heading {
   padding: 16px;
 }
@@ -61,6 +81,10 @@ a:hover {
 
 .button-line {
   padding: 16px;
+}
+
+.buffer {
+  height: 50px;
 }
 
 .error-message {

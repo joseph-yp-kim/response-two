@@ -3,82 +3,31 @@ import { Link } from 'react-router';
 import { Card, CardText } from 'material-ui/Card';
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
-
+import Tabs from 'material-ui/Tabs/Tabs';
+import Tab from 'material-ui/Tabs/Tab';
+import SignUp0 from './SignUp0.jsx';
 
 const SignUpForm = ({
   onSubmit,
   onChange,
   errors,
   user,
+  tabView
 }) => (
   <Card className="container">
-    <form action="/" onSubmit={onSubmit}>
-      <h2 className="card-heading">Sign Up</h2>
-
-      {errors.summary && <p className="error-message">{errors.summary}</p>}
-
-      <div className="field-line">
-        <TextField
-          floatingLabelText="First Name"
-          name="firstName"
-          errorText={errors.name}
+    <Tabs>
+      <Tab label="Team">
+        <SignUp0
+          onSubmit={onSubmit}
           onChange={onChange}
+          errors={errors}
+          user={user}
+          tabView={tabView}
         />
-      </div>
-
-      <div className="field-line">
-        <TextField
-          floatingLabelText="Last Name"
-          name="lastName"
-          errorText={errors.name}
-          onChange={onChange}
-        />
-      </div>
-
-      <div className="field-line">
-        <TextField
-          floatingLabelText="Company Email"
-          name="email"
-          errorText={errors.email}
-          onChange={onChange}
-        />
-      </div>
-
-      <div className="field-line">
-        <TextField
-          floatingLabelText="Password"
-          type="password"
-          name="password1"
-          onChange={onChange}
-        />
-      </div>
-
-      <div className="field-line">
-        <TextField
-          floatingLabelText="Type Password Again"
-          type="password"
-          name="password2"
-          onChange={onChange}
-          errorText={errors.password}
-        />
-      </div>
-
-      <div className="field-line">
-        <TextField
-          floatingLabelText="Team Name"
-          name="teamName"
-          errorText={errors.name}
-          onChange={onChange}
-        />
-      </div>
-
-
-      <div className="button-line">
-        <RaisedButton type="submit" label="Create New Account" primary />
-      </div>
-
-      <CardText>Already have an account? <Link to={'/login'}>Log in</Link></CardText>
-    </form>
+      </Tab>
+      <Tab label="Individual">
+      </Tab>
+    </Tabs>
   </Card>
 );
 
@@ -86,7 +35,8 @@ SignUpForm.propTypes = {
   onSubmit: PropTypes.func.isRequired,
   onChange: PropTypes.func.isRequired,
   errors: PropTypes.object.isRequired,
-  user: PropTypes.object.isRequired
+  user: PropTypes.object.isRequired,
+  tabView: PropTypes.object.isRequired
 };
 
 export default SignUpForm;
