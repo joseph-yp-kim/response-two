@@ -14,8 +14,11 @@ const muiTheme = getMuiTheme({
   fontFamily: 'Futura',
   palette: {
     primary1Color: '#05486C',
-    primary2Color: '#F0F0F0',
-  }
+    accent1Color: '#B71C1C'
+  },
+  raisedButton: {
+    secondaryColor: '#555555'
+  },
 });
 
 // ReactDom.render((

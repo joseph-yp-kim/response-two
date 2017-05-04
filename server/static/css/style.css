@@ -59,6 +59,18 @@ a:hover {
   width: 700px;
 }
 
+.payment-container {
+  margin: 0 auto;
+  width: 70%;
+  height: auto;
+}
+
+.drop-down {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .card-heading {
   padding: 16px;
 }
@@ -69,6 +81,10 @@ a:hover {
 
 .button-line {
   padding: 16px;
+}
+
+.buffer {
+  height: 50px;
 }
 
 .error-message {
